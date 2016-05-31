@@ -15,6 +15,7 @@ public class HomeActivity extends AppCompatActivity {
         //setContentViewより前にWindowにActionBar表示を設定
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_home);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
