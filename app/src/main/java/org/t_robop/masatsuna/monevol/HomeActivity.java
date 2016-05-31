@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -20,7 +21,10 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // メニューの要素を追加
-        menu.add("Normal item");
+        menu.add("ホーム");
+        menu.add("グラフ");
+        menu.add("課金履歴");
+        menu.add("設定");
 
         // メニューの要素を追加して取
         MenuItem actionItem = menu.add("Action Button");
@@ -36,10 +40,30 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getTitle().equals("Normal item")){
-            Toast.makeText(this, "Selected Item: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+        //メニューの中のボタンが押された時の動作
+        if (item.getTitle().equals("ホーム")){
+            //ホームが押された場合
+            Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+            startActivity(intent);
         }
+        else if (item.getTitle().equals("グラフ")){
+            //グラフが押された場合
+            Intent intent = new Intent(HomeActivity.this, GraphActivity.class);
+            startActivity(intent);
+        }
+        else if (item.getTitle().equals("課金履歴")) {
+            //課金履歴が押された場合
+            Intent intent = new Intent(HomeActivity.this, RecordActivity.class);
+            startActivity(intent);
+        }
+        else if (item.getTitle().equals("設定")) {
+            //設定が押された場合
+            Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
+            startActivity(intent);
+        }
+
 
         return true;
     }
+
 }
