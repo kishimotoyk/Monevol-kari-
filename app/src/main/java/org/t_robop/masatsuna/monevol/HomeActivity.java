@@ -132,6 +132,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void onClick(View arg0) {
+        //ボタンを押された時にダイアログメッセージを出して金額を入力させる
 
         //テキスト入力を受け付けるビューを作成します。
         final EditText editView = new EditText(HomeActivity.this);
